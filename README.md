@@ -1,0 +1,37 @@
+# Poli_skills
+
+Poli_skills is a collection of reusable skills for political and social-science research workflows. Each skill is self-contained under `skills/` and includes its own behavior, documentation, validation, and license metadata.
+
+## Skill catalog
+
+| Skill | Description | Status |
+|---|---|---|
+| [Research Workspace Builder](skills/research-workspace-builder/README.md) | Creates standalone, auditable Codex and Claude Code research task packs with local, online, and direct-API routes. | `v0.1.0` friend preview |
+
+Research Workspace Builder generalizes the research workflow associated with Yifei Zhu, Songpo Yang, Jiangnan Zhu, and Junyan Jiang, [“Agentic Framework for Political Biography Extraction”](https://doi.org/10.48550/arXiv.2603.18010) (arXiv:2603.18010). The preprint remains under review. Yifei Zhu is the software author; see the subskill's [CITATION.cff](skills/research-workspace-builder/CITATION.cff) for versioned citation metadata.
+
+## Install a skill
+
+Clone this collection and link the selected skill into the runtime's skill directory:
+
+```bash
+git clone https://github.com/yifeifrank/Poli_skills.git
+ln -s /absolute/path/to/Poli_skills/skills/research-workspace-builder \
+  ~/.codex/skills/research-workspace-builder
+```
+
+For Claude Code, install the same directory under `~/.claude/skills/research-workspace-builder`. Reload the runtime after installing or updating a skill.
+
+## Safety
+
+Research Workspace Builder uses least-privilege defaults: Codex uses `workspace-write` with network access and no approval escalation, while Claude Code uses its sandbox and fails closed. Its `--unsafe-unattended` option bypasses runtime permission enforcement and must be used only inside an externally isolated, disposable container or virtual machine. Read the subskill's [security guidance](skills/research-workspace-builder/SECURITY.md) before live research runs.
+
+## Validate
+
+Run the credential-free release check from the collection root:
+
+```bash
+python3 skills/research-workspace-builder/scripts/release_check.py
+```
+
+The root GitHub Actions workflow runs the same check on supported Python versions.
