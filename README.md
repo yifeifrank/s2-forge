@@ -1,8 +1,10 @@
 # S² Forge
 
-**Agent skills for rigorous social-science research.**
+**Expand what social science can study.**
 
-S2 Forge is a collection of reusable agent skills for building auditable research projects across the social sciences. Each skill is self-contained under `skills/` and includes its own behavior, documentation, validation, and license metadata.
+S2 Forge provides agent skills for ambitious, transparent, and auditable research.
+
+Each skill is self-contained under `skills/` and includes its own behavior, documentation, validation, and license metadata.
 
 ## Skill catalog
 
