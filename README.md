@@ -16,7 +16,13 @@ Research Workspace Builder generalizes the research workflow associated with Yif
 
 ## Install a skill
 
-Clone this collection and link the selected skill into the runtime's skill directory:
+For an agent-first installation, tell your runtime:
+
+> Install the Research Workspace Builder skill from `https://github.com/yifeifrank/s2-forge/tree/main/skills/research-workspace-builder`, then tell me when to reload the session.
+
+After installation, describe an Inquiry or repeated-case Study in ordinary language. The agent should create and validate the workspace; beginners do not need to write codebooks, manifests, or terminal commands. The [no-code getting-started guide](skills/research-workspace-builder/docs/getting-started.md) provides copyable prompts.
+
+For manual installation, clone this collection and link the selected skill into the runtime's skill directory:
 
 ```bash
 git clone https://github.com/yifeifrank/s2-forge.git
