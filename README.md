@@ -10,7 +10,7 @@ Each skill is self-contained under `skills/` and includes its own behavior, docu
 
 | Skill | Description | Status |
 |---|---|---|
-| [Research Workspace Builder](skills/research-workspace-builder/README.md) | Creates standalone, auditable Codex and Claude Code research task packs with local, online, and direct-API routes. | `v0.1.0` friend preview |
+| [Research Workspace Builder](skills/research-workspace-builder/README.md) | Preserves reusable sources and task-specific evidence for repeated-case studies and open-ended inquiries. | `v0.1.0` friend preview |
 
 Research Workspace Builder generalizes the research workflow associated with Yifei Zhu, Songpo Yang, Jiangnan Zhu, and Junyan Jiang, [“Agentic Framework for Political Biography Extraction”](https://doi.org/10.48550/arXiv.2603.18010) (arXiv:2603.18010). The preprint remains under review. Yifei Zhu is the software author; see the subskill's [CITATION.cff](skills/research-workspace-builder/CITATION.cff) for versioned citation metadata.
 
