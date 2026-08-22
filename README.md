@@ -18,7 +18,7 @@ The machine-readable record is [catalog.json](catalog.json). It includes stable 
 
 For a no-code installation, tell your agent:
 
-> Install S² Searcher from `https://github.com/yifeifrank/s2-searcher`, keep the repository root as the canonical skill directory, and tell me when I need to reload the session.
+> Install S² Searcher from `https://github.com/yifeifrank/s2-searcher` and tell me when it is ready.
 
 After installation, describe your research question or repeated-case design in ordinary language. The skill’s [beginner guide](https://github.com/yifeifrank/s2-searcher/blob/main/docs/getting-started.md) provides copyable prompts for setup, dry runs, live research, review, and resumption.
 
