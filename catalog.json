@@ -10,16 +10,16 @@
   },
   "skills": [
     {
-      "id": "research-workspace-builder",
-      "name": "Research Workspace Builder",
-      "description": "Turns open questions and repeated-case study designs into transparent, auditable, evidence-linked research workspaces.",
+      "id": "s2-searcher",
+      "name": "S² Searcher",
+      "description": "An evidence-preserving research agent for open-ended and repeated-case social science research.",
       "relationship": "first-party",
       "maturity": "preview",
       "version": "0.1.0",
-      "canonical_repository": "https://github.com/yifeifrank/research-workspace-builder",
+      "canonical_repository": "https://github.com/yifeifrank/s2-searcher",
       "skill_path": "SKILL.md",
       "default_branch": "main",
-      "reviewed_ref": "5c53733ecf6581d3cd46b8ced2a29e88ca833a56",
+      "reviewed_ref": "eb44627632b71aaf59e15f5f410886d249eae030",
       "reviewed_on": "2026-08-22",
       "authors": [
         "Yifei Zhu"

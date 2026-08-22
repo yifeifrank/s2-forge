@@ -10,17 +10,17 @@ The collection is deliberately small. Each skill remains in its own canonical re
 
 | Skill | Best for | Status | Canonical source |
 |---|---|---|---|
-| **Research Workspace Builder** | Turning an open question or repeated-case study design into an evidence-linked, validated research workspace | Preview · first-party | [`yifeifrank/research-workspace-builder`](https://github.com/yifeifrank/research-workspace-builder) |
+| **S² Searcher** | Searching once or studying at scale while preserving evidence in a validated research workspace | Preview · first-party | [`yifeifrank/s2-searcher`](https://github.com/yifeifrank/s2-searcher) |
 
 The machine-readable record is [catalog.json](catalog.json). It includes stable identifiers, reviewed revisions, task fit, permissions, evidence contracts, validation, authorship, and citation metadata.
 
-## Install Research Workspace Builder
+## Install S² Searcher
 
 For a no-code installation, tell your agent:
 
-> Install Research Workspace Builder from `https://github.com/yifeifrank/research-workspace-builder`, keep the repository root as the canonical skill directory, and tell me when I need to reload the session.
+> Install S² Searcher from `https://github.com/yifeifrank/s2-searcher`, keep the repository root as the canonical skill directory, and tell me when I need to reload the session.
 
-After installation, describe your research question or repeated-case design in ordinary language. The skill’s [beginner guide](https://github.com/yifeifrank/research-workspace-builder/blob/main/docs/getting-started.md) provides copyable prompts for setup, dry runs, live research, review, and resumption.
+After installation, describe your research question or repeated-case design in ordinary language. The skill’s [beginner guide](https://github.com/yifeifrank/s2-searcher/blob/main/docs/getting-started.md) provides copyable prompts for setup, dry runs, live research, review, and resumption.
 
 ## What S² Forge reviews
 
