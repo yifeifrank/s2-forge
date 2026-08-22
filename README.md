@@ -1,6 +1,8 @@
-# Poli_skills
+# S² Forge
 
-Poli_skills is a collection of reusable skills for political and social-science research workflows. Each skill is self-contained under `skills/` and includes its own behavior, documentation, validation, and license metadata.
+**Agent skills for rigorous social-science research.**
+
+S2 Forge is a collection of reusable agent skills for building auditable research projects across the social sciences. Each skill is self-contained under `skills/` and includes its own behavior, documentation, validation, and license metadata.
 
 ## Skill catalog
 
@@ -15,8 +17,8 @@ Research Workspace Builder generalizes the research workflow associated with Yif
 Clone this collection and link the selected skill into the runtime's skill directory:
 
 ```bash
-git clone https://github.com/yifeifrank/Poli_skills.git
-ln -s /absolute/path/to/Poli_skills/skills/research-workspace-builder \
+git clone https://github.com/yifeifrank/s2-forge.git
+ln -s /absolute/path/to/s2-forge/skills/research-workspace-builder \
   ~/.codex/skills/research-workspace-builder
 ```
 
