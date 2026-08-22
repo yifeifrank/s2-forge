@@ -2,46 +2,49 @@
 
 **Expand what social science can study.**
 
-S2 Forge turns social science questions and study designs into transparent, auditable, evidence-linked research workspaces.
+S² Forge is a curated collection of agent skills for valid, transparent, and auditable social science research.
 
-Each skill is self-contained under `skills/` and includes its own behavior, documentation, validation, and license metadata.
+The collection is deliberately small. Each skill remains in its own canonical repository, with independent releases, issues, tests, licensing, and citation metadata. S² Forge reviews and describes those skills without copying their source code. This lets the catalog include both first-party projects and strong work maintained by other researchers.
 
-## Skill catalog
+## Catalog
 
-| Skill | Description | Status |
-|---|---|---|
-| [Research Workspace Builder](skills/research-workspace-builder/README.md) | Preserves reusable sources and task-specific evidence for repeated-case studies and open-ended inquiries. | `v0.1.0` friend preview |
+| Skill | Best for | Status | Canonical source |
+|---|---|---|---|
+| **Research Workspace Builder** | Turning an open question or repeated-case study design into an evidence-linked, validated research workspace | Preview · first-party | [`yifeifrank/research-workspace-builder`](https://github.com/yifeifrank/research-workspace-builder) |
 
-Research Workspace Builder generalizes the research workflow associated with Yifei Zhu, Songpo Yang, Jiangnan Zhu, and Junyan Jiang, [“Agentic Framework for Political Biography Extraction”](https://doi.org/10.48550/arXiv.2603.18010) (arXiv:2603.18010). The preprint remains under review. Yifei Zhu is the software author; see the subskill's [CITATION.cff](skills/research-workspace-builder/CITATION.cff) for versioned citation metadata.
+The machine-readable record is [catalog.json](catalog.json). It includes stable identifiers, reviewed revisions, task fit, permissions, evidence contracts, validation, authorship, and citation metadata.
 
-## Install a skill
+## Install Research Workspace Builder
 
-For an agent-first installation, tell your session:
+For a no-code installation, tell your agent:
 
-> Install the Research Workspace Builder skill from `https://github.com/yifeifrank/s2-forge/tree/main/skills/research-workspace-builder`, then tell me when to reload the session.
+> Install Research Workspace Builder from `https://github.com/yifeifrank/research-workspace-builder`, keep the repository root as the canonical skill directory, and tell me when I need to reload the session.
 
-After installation, describe an Inquiry or repeated-case Study in ordinary language. The agent should create and validate the workspace; beginners do not need to write codebooks, manifests, or terminal commands. The [no-code getting-started guide](skills/research-workspace-builder/docs/getting-started.md) provides copyable prompts.
+After installation, describe your research question or repeated-case design in ordinary language. The skill’s [beginner guide](https://github.com/yifeifrank/research-workspace-builder/blob/main/docs/getting-started.md) provides copyable prompts for setup, dry runs, live research, review, and resumption.
 
-For manual installation, clone this collection and link the selected skill into the agent's skill directory:
+## What S² Forge reviews
+
+Catalog inclusion is an editorial decision, not a blanket claim that a skill is universally safe or that its substantive conclusions are valid. Reviews distinguish several questions:
+
+- Does the skill follow an open, inspectable Agent Skills structure?
+- Does it state what it is and is not appropriate for?
+- Are permissions, network services, credential names, and unsafe modes declared?
+- Can a reviewer reproduce a worked case and run deterministic checks?
+- Are evidence, missingness, contradiction, and provenance policies explicit?
+- Are authorship, licensing, limitations, and scholarly lineage documented?
+
+See [the curation policy](docs/curation.md) for status levels and the full admission standard.
+
+## Add a skill
+
+S² Forge can catalog a skill from any public canonical repository; the maintainer does not need to transfer ownership or duplicate the code here. Proposals should add one catalog entry and explain how the skill improves social-science research practice. Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing an entry.
+
+Validate catalog changes locally with:
 
 ```bash
-git clone https://github.com/yifeifrank/s2-forge.git
-ln -s /absolute/path/to/s2-forge/skills/research-workspace-builder \
-  ~/.codex/skills/research-workspace-builder
+python3 scripts/validate_catalog.py
 ```
 
-For Claude Code, install the same directory under `~/.claude/skills/research-workspace-builder`. Reload the session after installing or updating a skill.
+## Collection and distribution
 
-## Safety
-
-Research Workspace Builder uses least-privilege defaults: Codex uses `workspace-write` with network access and no approval escalation, while Claude Code uses its sandbox and fails closed. Its `--unsafe-unattended` option bypasses session permission enforcement and must be used only inside an externally isolated, disposable container or virtual machine. Read the subskill's [security guidance](skills/research-workspace-builder/SECURITY.md) before live research runs.
-
-## Validate
-
-Run the credential-free release check from the collection root:
-
-```bash
-python3 skills/research-workspace-builder/scripts/release_check.py
-```
-
-The root GitHub Actions workflow runs the same check on supported Python versions.
+GitHub is the source of truth for this public catalog and for each linked skill. Installers and packs may provide additional distribution later, but they should resolve back to the canonical repositories recorded here rather than become competing copies.

@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "collection": {
+    "id": "s2-forge",
+    "name": "S² Forge",
+    "tagline": "Expand what social science can study.",
+    "description": "A curated collection of agent skills for valid, transparent, and auditable social science research.",
+    "repository": "https://github.com/yifeifrank/s2-forge",
+    "maintainer": "Yifei Zhu"
+  },
+  "skills": [
+    {
+      "id": "research-workspace-builder",
+      "name": "Research Workspace Builder",
+      "description": "Turns open questions and repeated-case study designs into transparent, auditable, evidence-linked research workspaces.",
+      "relationship": "first-party",
+      "maturity": "preview",
+      "version": "0.1.0",
+      "canonical_repository": "https://github.com/yifeifrank/research-workspace-builder",
+      "skill_path": "SKILL.md",
+      "default_branch": "main",
+      "reviewed_ref": "5c53733ecf6581d3cd46b8ced2a29e88ca833a56",
+      "reviewed_on": "2026-08-22",
+      "authors": [
+        "Yifei Zhu"
+      ],
+      "license": "Apache-2.0",
+      "domains": [
+        "social science",
+        "comparative research",
+        "political science"
+      ],
+      "research_stages": [
+        "evidence discovery",
+        "source preservation",
+        "case research",
+        "structured coding",
+        "validation"
+      ],
+      "work_modes": [
+        "open-ended inquiry",
+        "repeated-case study",
+        "local document research"
+      ],
+      "best_for": [
+        "questions that need reusable, line-cited evidence",
+        "many cases researched under shared guidance",
+        "research that must preserve conflicts and unresolved gaps"
+      ],
+      "not_for": [
+        "a one-off answer that does not need a reusable workspace",
+        "automatically treating generated conclusions as substantively valid",
+        "unreviewed use with sensitive data or unrestricted host permissions"
+      ],
+      "supported_agents": [
+        "Codex",
+        "Claude Code"
+      ],
+      "requirements": [
+        "Python 3.10+",
+        "Codex CLI and/or Claude Code",
+        "a configured search backend for online research"
+      ],
+      "capabilities": {
+        "filesystem": "Writes inside the generated research workspace.",
+        "network": "Optional for online research; restricted to configured research providers under the safe defaults.",
+        "commands": "Runs bundled Python validation, routing, retrieval, and launcher scripts.",
+        "credential_names": [
+          "FIRECRAWL_API_KEY",
+          "EXA_API_KEY"
+        ],
+        "external_actions": "Searches and retrieves public sources when the user authorizes a live run.",
+        "unsafe_flag": "--unsafe-unattended"
+      },
+      "evidence_contract": [
+        "full-source caching",
+        "task-specific line citations",
+        "explicit conflicts and unresolved gaps",
+        "frozen evidence inventory",
+        "deterministic validation"
+      ],
+      "validation": {
+        "command": "python3 scripts/release_check.py",
+        "status": "passed",
+        "checked_on": "2026-08-22"
+      },
+      "citation": {
+        "software": "CITATION.cff",
+        "related_preprint": "Agentic Framework for Political Biography Extraction",
+        "doi": "10.48550/arXiv.2603.18010",
+        "publication_status": "under-review preprint"
+      }
+    }
+  ]
+}
