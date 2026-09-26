@@ -4,7 +4,7 @@
 
 S² Forge is a curated collection of agent skills for valid, transparent, and auditable social science research.
 
-The collection is deliberately small. Each skill remains in its own canonical repository, with independent releases, issues, tests, licensing, and citation metadata. S² Forge reviews and describes those skills without copying their source code. This lets the catalog include both first-party projects and strong work maintained by other researchers.
+The collection is deliberately small. Each cataloged research skill remains in its own canonical repository, with independent releases, issues, tests, licensing, and citation metadata. S² Forge reviews and describes those research skills without copying their source code. Two writing skills are maintained separately under `skills/`. This lets the catalog include both first-party projects and strong work maintained by other researchers.
 
 ## Catalog
 
@@ -13,6 +13,15 @@ The collection is deliberately small. Each skill remains in its own canonical re
 | **S² Searcher** | Searching once or studying at scale while preserving evidence in a validated research workspace | Preview · first-party | [`yifeifrank/s2-searcher`](https://github.com/yifeifrank/s2-searcher) |
 
 The machine-readable record is [catalog.json](catalog.json). It includes stable identifiers, reviewed revisions, task fit, permissions, evidence contracts, validation, authorship, and citation metadata.
+
+## Writing skills
+
+- [Academic Humanizer](skills/academic-humanizer/SKILL.md): revise scholarly prose while preserving the author's meaning, evidence, citations, and inferential claims. Keep version history, debugging, case-specific fixes, and production details in a separate technical report, outside the article. This replaces `social-science-academic-writing`.
+- [Humanizer](skills/humanizer/SKILL.md): general-purpose prose editing; its existing instructions and license are unchanged.
+
+To install the academic writing skill, ask your agent:
+
+> Install the skill at `skills/academic-humanizer` from `https://github.com/yifeifrank/s2-forge`.
 
 ## Install S² Searcher
 

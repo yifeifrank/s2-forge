@@ -4,7 +4,7 @@ S² Forge curates agent skills that materially improve social-science research. 
 
 ## Propose a catalog entry
 
-Add or update one object in `catalog.json` and, when appropriate, the catalog table in `README.md`. Do not vendor, fork, or copy the skill into this repository merely to list it.
+Add or update one object in `catalog.json` and, when appropriate, the catalog table in `README.md`. Do not vendor, fork, or copy the skill into this repository merely to list it. The existing writing-skill exceptions under `skills/academic-humanizer` and `skills/humanizer` are maintained separately from the external research catalog.
 
 Every proposal should identify:
 

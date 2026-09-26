@@ -14,6 +14,7 @@ CATALOG = ROOT / "catalog.json"
 HEX_SHA = re.compile(r"^[0-9a-f]{40}$")
 MATURITY_LEVELS = {"experimental", "preview", "stable"}
 RELATIONSHIPS = {"first-party", "external"}
+BUNDLED_WRITING_SKILLS = {"academic-humanizer", "humanizer"}
 
 
 def require(mapping: dict, key: str, context: str):
@@ -81,9 +82,25 @@ def main() -> None:
         if skill["name"] not in readme or upstream not in readme:
             raise SystemExit(f"README catalog is missing {skill_id}")
 
-    vendored_skills = ROOT / "skills"
-    if vendored_skills.exists() and any(vendored_skills.rglob("SKILL.md")):
-        raise SystemExit("S² Forge catalogs canonical repositories; do not vendor skill copies")
+    # Explicit writing-skill exceptions do not relax the external catalog rule.
+    bundled = ROOT / "skills"
+    found = set()
+    for path in bundled.rglob("SKILL.md"):
+        relative = path.relative_to(bundled)
+        if len(relative.parts) != 2 or relative.parts[0] not in BUNDLED_WRITING_SKILLS:
+            raise SystemExit(f"Unlisted bundled skill: {relative}; research skills belong in the catalog")
+        text = path.read_text(encoding="utf-8")
+        parts = text.split("---", 2)
+        if len(parts) != 3 or parts[0].strip():
+            raise SystemExit(f"Missing skill frontmatter: {relative}")
+        name = re.search(r"^name:\s*([^\n]+)$", parts[1], re.MULTILINE)
+        if not name or name.group(1).strip() != relative.parts[0]:
+            raise SystemExit(f"Skill name does not match directory: {relative}")
+        if not re.search(r"^description:\s*\S", parts[1], re.MULTILINE):
+            raise SystemExit(f"Missing skill description: {relative}")
+        found.add(relative.parts[0])
+    if found != BUNDLED_WRITING_SKILLS:
+        raise SystemExit(f"Missing bundled writing skills: {sorted(BUNDLED_WRITING_SKILLS - found)}")
 
     print(f"OK: {len(skills)} catalog entry validated; canonical sources remain external")
 
